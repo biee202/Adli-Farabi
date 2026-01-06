@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<style>
+    body {
+        background-color: #121212;
+        color: #E0E0E0; 
+        font-family: 'Consolas', 'Courier New', monospace;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+     .header {
+            background-color: #1E1E1E;
+            border-radius: 20px;
+            padding: 20px 40px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+        }
+
+        .text-header h1 {
+            color: #1ABC9C;
+            margin: 0;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        .text-header p {
+            color: #E0E0E0;
+            margin-top: 8px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        #jam {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #BDC3C7;
+            letter-spacing: 1px;
+        }
+
+    .nav {
+        background-color: #2C3E50; 
+        text-align: center;
+        font-size: 18px;
+        margin: 30px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        padding: 5px 0;
+    }
+
+    .nav a {
+        color: #E0E0E0;
+        text-decoration: none;
+        padding: 15px 25px;
+        display: inline-block;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav a:hover {
+        background-color: #34495E;
+        color: #FFFFFF;
+    }
+
+    .active {
+        background-color: #16A085;
+        color: #FFFFFF;
+        border-radius: 8px;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        background-color: #1E1E1E; 
+        color: #BDC3C7;
+        padding: 30px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .container h2 {
+        text-align: center;
+        color: #1ABC9C;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        display: flex;
+        gap: 30px; 
+        align-items: flex-start;
+    }
+
+    .container img {
+        width: 250px;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+        flex-shrink: 0; 
+        border: 2px solid #1ABC9C;
+    }
+
+    .text-content {
+        flex-grow: 1;
+    }
+
+    .container p {
+        text-align: justify;
+        line-height: 1.6;
+    }
+
+        .content-wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+        .container img {
+            width: 100%;
+            max-width: 250px;
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+        .text-content {
+            font-size: 20px;
+            text-align: fixed;
+            margin: 10px 15px; 
+
+        }
+        .nav {
+            min-width: unset;
+        }
+
+          .footer {
+            width: 100%;
+            background-color: #1E1E1E;
+            color: #efe8e8;
+            text-align: center;
+            padding: 15px 0;
+            border-top: 1px solid #2C3E50;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .footer p {
+            margin: 3px 0;
+        }
+
+
+</style>
+<body>
+    
+    <div class="header">
+        <div class="text-header">
+            <h1>Profile Saya</h1>
+            <p>Mengukir cerita lewat senar dan melodi</p>
+            <div id="jam"></div>
+        </div>
+    </div>
+
+     <div class="nav">
+            <a href="home.html">home</a>
+            <a href="profile.html" class="active">profile</a>
+            <a href="gallery.html">gallery</a>
+            <a href="contact.html">contact</a>
+     </div>
+
+     <div class="container">
+        <h2>profile saya</h2>
+        <div class="content">
+            <img src="gambar/foto pribadi.jpg" alt="gambar lomba">
+            <div class="text-content">
+                <ul>
+                    <li>NAMA : ADLI FARABI</li>
+                    <li>NIM : 251011701039</li>
+                    <li>KELAS: 01SIFP015</li>
+                    <li>Kampus: Universitas Pamulang</li>
+                    <li>Prodi: Sistem Informasi</li>
+                   
+                </ul>
+            </div>
+        </div>
+     </div>
+      <script>
+    function updateJam() {
+    const waktu = new Date();
+
+    const jam   = String(waktu.getHours()).padStart(2, '0');
+    const menit = String(waktu.getMinutes()).padStart(2, '0');
+    const detik = String(waktu.getSeconds()).padStart(2, '0');
+
+    const tgl   = String(waktu.getDate()).padStart(2, '0');
+    const bln   = String(waktu.getMonth() + 1).padStart(2, '0');
+    const thn   = waktu.getFullYear();
+
+    document.getElementById("jam").innerHTML =
+        `${tgl}/${bln}/${thn} - ${jam}:${menit}:${detik}`;
+    }
+
+    updateJam();
+    setInterval(updateJam, 1000);
+ </script>
+
+ <footer class="footer">
+    <p>&copy; 2026 Adli Farabi 251011701039</p>
+  </footer>
+   </body>
+</html>

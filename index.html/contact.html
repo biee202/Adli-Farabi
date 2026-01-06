@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<style>
+    body {
+        background-color: #121212;
+        color: #E0E0E0; 
+        font-family: 'Consolas', 'Courier New', monospace;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+ 
+    .header {
+        background-color: #1E1E1E;
+        border-radius: 20px;
+        padding: 20px 40px;
+        margin-top: 20px;
+        text-align: center;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    }
+
+    .text-header h1 {
+        color: #1ABC9C;
+        margin: 0;
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    .text-header p {
+        color: #E0E0E0;
+        margin-top: 8px;
+        font-size: 14px;
+        font-style: italic;
+    }
+
+    #jam {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #BDC3C7;
+        letter-spacing: 1px;
+    }
+
+    .nav {
+        background-color: #2C3E50; 
+        text-align: center;
+        font-size: 18px;
+        margin: 30px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        padding: 5px 0;
+    }
+
+    .nav a {
+        color: #E0E0E0;
+        text-decoration: none;
+        padding: 15px 25px;
+        display: inline-block;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav a:hover {
+        background-color: #34495E;
+        color: #FFFFFF;
+    }
+
+    .active {
+        background-color: #16A085;
+        color: #FFFFFF;
+        border-radius: 8px;
+    }
+
+    .contact-container {
+        width: 90%;
+        max-width: 800px;
+        background-color: #1E1E1E;
+        color: #BDC3C7;
+        padding: 40px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-container h2 {
+        text-align: center;
+        color: #1ABC9C;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-group label {
+        color: #1ABC9C;
+        font-size: 14px;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #121212;
+        border: 1px solid #2C3E50;
+        padding: 12px;
+        color: #E0E0E0;
+        font-family: inherit;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+        border-color: #1ABC9C;
+    }
+
+    .btn-submit {
+        background-color: #16A085;
+        color: white;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+    .btn-submit:hover {
+        background-color: #1ABC9C;
+    }
+
+    .social-info {
+        margin-top: 40px;
+        border-top: 1px solid #2C3E50;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .social-info p {
+        margin: 10px 0;
+    }
+
+    .social-info a {
+        color: #1ABC9C;
+        text-decoration: none;
+    }
+
+    .footer {
+        width: 100%;
+        background-color: #1E1E1E;
+        color: #888888;
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid #2C3E50;
+        font-size: 13px;
+        margin-top: auto;
+    }
+</style>
+<body>
+
+    <div class="header">
+        <div class="text-header">
+            <h1>Hubungi Saya</h1>
+            <p>Mari berkolaborasi atau sekadar berbagi cerita tentang musik</p>
+            <div id="jam"></div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a href="home.html">home</a>
+        <a href="profile.html">profile</a>
+        <a href="gallery.html">gallery</a>
+        <a href="contact.html" class="active">contact</a>
+    </div>
+ 
+    <div class="contact-container">
+        <h2>Kirim Pesan</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="Masukkan nama Anda..." required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="email@contoh.com" required>
+            </div>
+            <div class="form-group">
+                <label>Subjek</label>
+                <input type="text" placeholder="Tujuan pesan (e.g. Kolaborasi Musik)">
+            </div>
+            <div class="form-group">
+                <label>Pesan</label>
+                <textarea rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">KIRIM PESAN</button>
+        </form>
+
+        <div class="social-info">
+            <p>📧 Email: <a href="mailto: adli.farabi@email.com">adli.farabi@email.com</a></p>
+            <p>📍 Lokasi: Jakarta Selatan, DKI Jakarta</p>
+        </div>
+    </div>
+
+    <script>
+        function updateJam() {
+            const waktu = new Date();
+            const jam   = String(waktu.getHours()).padStart(2, '0');
+            const menit = String(waktu.getMinutes()).padStart(2, '0');
+            const detik = String(waktu.getSeconds()).padStart(2, '0');
+            const tgl   = String(waktu.getDate()).padStart(2, '0');
+            const bln   = String(waktu.getMonth() + 1).padStart(2, '0');
+            const thn   = waktu.getFullYear();
+
+            document.getElementById("jam").innerHTML =
+                `${tgl}/${bln}/${thn} - ${jam}:${menit}:${detik}`;
+        }
+        updateJam();
+        setInterval(updateJam, 1000);
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2026 Adli Farabi 251011701039</p>
+    </footer>
+</body>
+</html>
