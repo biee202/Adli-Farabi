@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<style>
+    body {
+        background-color: #121212;
+        color: #E0E0E0; 
+        font-family: 'Consolas', 'Courier New', monospace;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .header {
+            background-color: #1E1E1E;
+            border-radius: 20px;
+            padding: 20px 40px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+        }
+
+        .text-header h1 {
+            color: #1ABC9C;
+            margin: 0;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        .text-header p {
+            color: #E0E0E0;
+            margin-top: 8px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        #jam {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #BDC3C7;
+            letter-spacing: 1px;
+        }
+
+    .nav {
+        background-color: #2C3E50; 
+        text-align: center;
+        font-size: 18px;
+        margin: 30px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        padding: 5px 0;
+    }
+
+    .nav a {
+        color: #E0E0E0;
+        text-decoration: none;
+        padding: 15px 25px;
+        display: inline-block;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav a:hover {
+        background-color: #34495E;
+        color: #FFFFFF;
+    }
+
+    .active {
+        background-color: #16A085;
+        color: #FFFFFF;
+        border-radius: 8px;
+    }
+
+    .gallery-container {
+        width: 90%;
+        max-width: 1100px;
+        background-color: #1E1E1E;
+        color: #BDC3C7;
+        padding: 30px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-container h2 {
+        text-align: center;
+        color: #1ABC9C;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 20px;
+    }
+
+    .gallery-item {
+        background-color: #181818;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-5px); 
+    }
+
+   .gallery-item img {
+    width: 100%;
+    height: 180px; 
+    border-radius: 5px;
+    border: 2px solid #104e41;
+    object-fit: contain;
+    background-color: #000;
+}
+
+
+    .gallery-item p {
+        margin-top: 8px;
+        font-size: 13px;
+        color: #CCCCCC;
+    }
+
+   
+    @media (max-width: 1024px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-grid {
+            grid-template-columns: 1fr; 
+        }
+    }
+
+    .footer {
+        width: 100%;
+        background-color: #1E1E1E;
+        color: #888888;
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid #2C3E50;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    .footer p {
+        margin: 3px 0;
+    }
+</style>
+<body>
+
+    <div class="header">
+        <div class="text-header">
+            <h1>gallery musikku</h1>
+            <p>Mengukir cerita lewat senar dan melodi</p>
+            <div id="jam"></div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a href="home.html">home</a>
+        <a href="profile.html" >profile</a>
+        <a href="gallery.html"class="active">gallery</a>
+        <a href="contact.html">contact</a>
+    </div>
+ 
+    <div class="gallery-container">
+        <h2>Gallery Prestasi & Musik</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="gambar/foto lomba02.jpg" alt="Lomba gitar">
+                <p>Penampilan lomba gitar FLS2N tingkat wilayah Jakarta Barat.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="gambar/sertifikat.jpg" alt="Foto prestasi">
+                <p>Momen menerima penghargaan sebagai Juara 2 FLS2N.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="gambar/foto lomba01.jpg" alt="Latihan gitar">
+                <p>Penampilan lomba gitar FLS2N tingkat DKI Jakarta.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="gambar/prestasi.jpg" alt="Sesi Latihan">
+                <p>Penghargaan atas pencapaian dalam lomba musik di sekolah.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateJam() {
+            const waktu = new Date();
+            const jam   = String(waktu.getHours()).padStart(2, '0');
+            const menit = String(waktu.getMinutes()).padStart(2, '0');
+            const detik = String(waktu.getSeconds()).padStart(2, '0');
+            const tgl   = String(waktu.getDate()).padStart(2, '0');
+            const bln   = String(waktu.getMonth() + 1).padStart(2, '0');
+            const thn   = waktu.getFullYear();
+
+            document.getElementById("jam").innerHTML =
+                `${tgl}/${bln}/${thn} - ${jam}:${menit}:${detik}`;
+        }
+        updateJam();
+        setInterval(updateJam, 1000);
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2026 Adli Farabi 251011701039</p>
+    </footer>
+</body>
+</html>
